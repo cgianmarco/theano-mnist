@@ -104,9 +104,7 @@ for i in range(100):
 
 
         """
-        Print True if the maximum value index of test dataset is equal to 
-
-        predicted one.
+        Print accuracy rate for i-th epoch
 
         """
     print i, np.mean(np.argmax(teY, axis=1) == predict(teX))
