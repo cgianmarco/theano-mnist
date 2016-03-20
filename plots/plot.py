@@ -2,10 +2,19 @@ import matplotlib.pyplot as plt
 
 def plot_accuracy_per_epoch(avr_accuracy):
 
-	plt.plot( avr_accuracy, 'r--')
+	try:
 
-	plt.ylabel('Average accuracy')
+		plt.plot( avr_accuracy, 'r--')
 
-	plt.xlabel('Epochs')
+		plt.ylabel('Average accuracy')
+
+		plt.xlabel('Epochs')
 	
-	plt.show()
+		plt.show()
+
+	except ValueError:
+
+		print "Array not valid! you messed up somewhere."
+
+
+	
