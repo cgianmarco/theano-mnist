@@ -3,6 +3,8 @@ from theano import tensor as T
 import numpy as np
 from loader.load import mnist
 
+from plots.plot import *
+
 
 def floatX(X):
 	"""
@@ -92,7 +94,10 @@ train = theano.function(inputs=[X, Y], outputs=cost, updates=update, allow_input
 predict = theano.function(inputs=[X], outputs=y_pred, allow_input_downcast=True)
 
 
-for i in range(100):
+avr_accuracy = [] # important!
+
+
+for i in range(5):
     for start, end in zip(range(0, len(trX), 128), range(128, len(trX), 128)):
     	"""
     	trX[start:end] has size 128x784
@@ -107,6 +112,15 @@ for i in range(100):
         Print accuracy rate for i-th epoch
 
         """
-    print i, np.mean(np.argmax(teY, axis=1) == predict(teX))
+
+    accuracy = np.mean(np.argmax(teY, axis=1) == predict(teX))
+
+    print i, accuracy
+
+    avr_accuracy.append(accuracy)
+
+plot_accuracy_per_epoch(avr_accuracy)
+
+
 
 
