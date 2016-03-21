@@ -7,6 +7,12 @@
 
 - Loader: a script to load the MNIST database.
 
+- Generated: the generated models of the digits.
+
+- Dataset: the MNIST dataset.
+
+- Drawer: a script to generate png files.
+
 ### Usage
 
 1. Clone project to local directory.
