@@ -5,6 +5,8 @@ from loader.load import mnist
 
 from plots.plot import *
 
+from drawer.png_generator import *
+
 
 def floatX(X):
 	"""
@@ -97,30 +99,33 @@ predict = theano.function(inputs=[X], outputs=y_pred, allow_input_downcast=True)
 avr_accuracy = [] # important!
 
 
-for i in range(5):
-    for start, end in zip(range(0, len(trX), 128), range(128, len(trX), 128)):
-    	"""
-    	trX[start:end] has size 128x784
+for i in range(30):
+	for start, end in zip(range(0, len(trX), 128), range(128, len(trX), 128)):
+		"""
+		trX[start:end] has size 128x784
+		
+		trY[start:end] has size 128x10
 
-    	trY[start:end] has size 128x10
-
-    	"""
-        cost = train(trX[start:end], trY[start:end])
+		"""
+		cost = train(trX[start:end], trY[start:end])
 
 
-        """
-        Print accuracy rate for i-th epoch
+		"""
+		Print accuracy rate for i-th epoch
 
-        """
+		"""
 
-    accuracy = np.mean(np.argmax(teY, axis=1) == predict(teX))
+	accuracy = np.mean(np.argmax(teY, axis=1) == predict(teX))
 
-    print i, accuracy
+	print i, accuracy
 
-    avr_accuracy.append(accuracy)
+	avr_accuracy.append(accuracy)
+
+for i in range(10):
+
+	filename = "digit" + str(i) + ".png"
+	draw_digit(w.get_value()[:,i], filename)
+
+
 
 plot_accuracy_per_epoch(avr_accuracy)
-
-
-
-
