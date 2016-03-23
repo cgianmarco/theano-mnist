@@ -21,7 +21,13 @@
 git clone https://github.com/cgianmarco/theano-mnist.git
 ```
 
-2. Run log_reg.py
+2. Enter directory.
+
+```
+cd theano-mnist
+```
+
+3. Run log_reg.py
 
 ```
 python log_reg.py
