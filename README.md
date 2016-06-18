@@ -15,13 +15,13 @@
 
 ### Usage
 
-1. Clone project to local directory.
+1. Clone project to local directory
 
 ```
 git clone https://github.com/cgianmarco/theano-mnist.git
 ```
 
-2. Enter directory.
+2. Enter directory
 
 ```
 cd theano-mnist
