@@ -15,19 +15,19 @@
 
 ### Usage
 
-1. Clone project to local directory
+Clone project to local directory
 
 ```
 git clone https://github.com/cgianmarco/theano-mnist.git
 ```
 
-2. Enter directory
+Enter directory
 
 ```
 cd theano-mnist
 ```
 
-3. Run log_reg.py
+Run log_reg.py
 
 ```
 python log_reg.py
