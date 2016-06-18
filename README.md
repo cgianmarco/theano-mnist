@@ -1,5 +1,5 @@
 # theano-mnist
-## Testing Theano on the MNIST database
+Testing Theano on the MNIST database
 
 ### Modules
 
